@@ -30,6 +30,9 @@ Started: 04/07/2022.
       - [Body Element](#body-element)
     - [Working with Text](#working-with-text)
     - [HTML Comments](#html-comments)
+    - [HTML Lists](#html-lists)
+    - [HTML Links](#html-links)
+    - [HTML Images](#html-images)
 
 ## Introduction
 
@@ -281,3 +284,67 @@ A
 Comment
 -->
 ```
+
+### HTML Lists
+
+There are two types of lists, ordered and unordered.
+
+Unordered lists (`<ol></ol>`) are bullet point lists, whereas ordered lists (`<ul></ul>`) are numbered lists.
+
+To add an item to a list, use the `<li></li>` element, using it one for each item in the list.
+
+For example:
+
+Ordered list:
+
+``` html
+<ol>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+</ol>
+```
+
+Unordered list:
+
+``` html
+<ul>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+</ul>
+```
+
+### HTML Links
+
+For linking to other pages / sites, you use the `<a></a>` element tag. To create a link that goes to google.com for example, do the following:
+
+``` html
+<a href="https://www.google.com">Click Me To Go To Google.com</a>
+```
+
+The text inside the 'a' tags will be what is shown to you and without styling applied, it will be blue and underlined. If you have clicked it before, it will be purple.
+
+href="" tells the browser what page to go to.
+
+There are two types of link:
+
+- Absolute: A link to a page on another website (e.g google.com).
+- Relative: A link to a page on your site (about.html).
+
+An example of a relative link is shown below:
+
+``` html
+<a href="./pages/about.html">About</a>
+```
+
+### HTML Images
+
+Images are contain in a self-closing `<img>` tag. You use it as follows:
+
+``` html
+<img src="./images/dog.jpg" alt="A picture of a dog"/>
+```
+
+- src= is used to point to the image you wish to use.
+- alt= is used to provide a test description of what the image is. It is used for accessibility, SEO and a placeholder in the event that the image cannot be loaded.
