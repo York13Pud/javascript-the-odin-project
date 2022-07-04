@@ -1,3 +1,7 @@
+# The Odin Project - Foundations
+
+Started: 04/07/2022.
+
 - [The Odin Project - Foundations](#the-odin-project---foundations)
   - [Introduction](#introduction)
     - [Types of web developers](#types-of-web-developers)
@@ -14,11 +18,18 @@
       - [Commit Changes](#commit-changes)
       - [Push The Commit to GitHub](#push-the-commit-to-github)
     - [Git Commit History](#git-commit-history)
-  - [Introduction to HTML and CSS.](#introduction-to-html-and-css)
-
-# The Odin Project - Foundations
-
-Started: 04/07/2022.
+  - [Introduction to HTML and CSS](#introduction-to-html-and-css)
+    - [HTML Elements and Tags](#html-elements-and-tags)
+    - [index file](#index-file)
+    - [HTML File Structure](#html-file-structure)
+      - [DOCTYPE](#doctype)
+      - [HTML Element](#html-element)
+      - [Head Element](#head-element)
+        - [Charset Meta Element](#charset-meta-element)
+      - [Title Element](#title-element)
+      - [Body Element](#body-element)
+    - [Working with Text](#working-with-text)
+    - [HTML Comments](#html-comments)
 
 ## Introduction
 
@@ -173,9 +184,100 @@ Date:   Mon Jul 4 10:42:27 2022 +0100
     Initial commit
 ```
 
-## Introduction to HTML and CSS.
+## Introduction to HTML and CSS
 
 - HTML: This is the structure of a page.
 - CSS: Styling of a page.
 - JavaScript: Make the page do some fancy stuff.
 
+### HTML Elements and Tags
+
+Elements are pieces of data, such as a sentence or paragraph of text that is enclosed inside of HTML tags. The HTML tags will tell the browser how to present the information to the person reading it. Each tag (typically(there are some exceptions)) has an opening (`<element-name>`) and a closing tag (`</element-name>`).
+
+For example, a basic 'p' tag is used to present data as a paragraph:
+
+``` html
+<p>This is some text</p>
+```
+
+### index file
+
+You should always name the file with your homepage on as index.html (or index.htm) as most web servers are setup to look for this file by default when a website is accessed without a page specified.
+
+### HTML File Structure
+
+Sample boilerplate file:
+
+``` html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+```
+
+#### DOCTYPE
+
+``` html
+<!DOCTYPE HTML>
+```
+
+The DOCTYPE tells the browser what version of HTML the file is based on and render the file using that version. The above example implies the browser should render the file using HTML 5.
+
+#### HTML Element
+
+``` html
+<!DOCTYPE html>
+<html lang="en">
+</html>
+```
+
+The `<html></html>` tags are the root element of the document. Everything that is shown on the page will be enclosed in these tags.
+
+The lang attribute is used to aid in SEO and accessibility.
+
+#### Head Element
+
+This element is used for storing meta data about the page, which is helpful for SEO and search engine discovery.
+
+##### Charset Meta Element
+
+The charset meta element is very important as it tells the browser what character encoding to use to render special symbols on the page. utf-8 is typical for English but other languages may be different.
+
+#### Title Element
+
+The title element tags are used to show the title name of the page in your browsers window or tab.
+
+#### Body Element
+
+This is where you place all of the content for the page.
+
+### Working with Text
+
+| Start Element | End Element | Used For | Usage Example |
+| :--- | :--- | :--- | :--- |
+| `<p>` | `</p>` | Paragraph of text | `<p>hello world</p>` |
+| `<h1>` | `</h1>` | Top heading of a page | `<h1>hello world</h1>` |
+| `<h2>-<h6>` | `</h2>-</h6>` | Sub-headings of a page | `<h2>hello world</h2>` |
+| `<strong>` | `</strong>` | Make text bold | `<strong>hello world</strong>` |
+| `<em>` | `</em>` | Emphasise (italicise) some text | `<em>hello world</em>` |
+| `<u>` | `</u>` | Underline some text | `<u>hello world</u>` |
+
+### HTML Comments
+
+Comments in an HTML file are done using `<!-- comment goes here -->`. This is multi-line so you can do a comment like the below:
+
+``` html
+<!-- This
+Is
+A
+Comment
+-->
+```
