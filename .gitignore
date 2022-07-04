@@ -102,3 +102,13 @@ dist
 
 # TernJS port file
 .tern-port
+
+# macOS specific
+.DS_store
+.DS_Store
+
+# Ignore .vscode folder
+.vscode
+
+# Misc files to ignore
+database.db

@@ -1,1 +1,1 @@
-# javascript-th-odin-project
+# javascript-the-odin-project
