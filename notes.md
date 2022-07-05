@@ -33,6 +33,18 @@ Started: 04/07/2022.
     - [HTML Lists](#html-lists)
     - [HTML Links](#html-links)
     - [HTML Images](#html-images)
+  - [CSS Foundations](#css-foundations)
+    - [Div Tags](#div-tags)
+    - [Selectors](#selectors)
+      - [Universal Selector](#universal-selector)
+      - [Type Selectors](#type-selectors)
+      - [Class Selectors](#class-selectors)
+      - [ID Selectors](#id-selectors)
+      - [Grouping Selectors](#grouping-selectors)
+    - [Adding CSS to HTML](#adding-css-to-html)
+      - [External CSS (CSS File)](#external-css-css-file)
+      - [Internal CSS](#internal-css)
+      - [Inline CSS](#inline-css)
 
 ## Introduction
 
@@ -348,3 +360,129 @@ Images are contain in a self-closing `<img>` tag. You use it as follows:
 
 - src= is used to point to the image you wish to use.
 - alt= is used to provide a test description of what the image is. It is used for accessibility, SEO and a placeholder in the event that the image cannot be loaded.
+
+## CSS Foundations
+
+### Div Tags
+
+Div tags in HTML are just empty containers that you use to separate parts up for styling purposes.
+
+### Selectors
+
+Selectors refer to HTML elements that the CSS rule will apply to.
+
+#### Universal Selector
+
+Applies to all elements on the page by default and uses the * notation to apply it to all elements. For example, every element should be the colour red:
+
+``` css
+* {
+  color: red;
+}
+```
+
+#### Type Selectors
+
+Applies to all elements on a page that are named after it. For example, make all h1 elements blue:
+
+``` css
+h1 {
+  color: blue;
+}
+```
+
+#### Class Selectors
+
+Applies to an element (a div for example) that has the class specified. For example, a div with a class specified that will set the color to green:
+
+``` css
+.alert-text {
+  color: green;
+}
+```
+
+``` html
+<div class="alert-text">
+  This text will be green.
+</div>
+```
+
+Classes can be reused multiple times and you can apply multiple classes to an element, for example `<div class="alert-text text-underline">`.
+
+#### ID Selectors
+
+Applies to a single element on a page and can only be used once. For example:
+
+``` css
+#title {
+  color: green;
+}
+```
+
+``` html
+<h1 id="title">
+  This text will be green.
+</h1>
+```
+
+Unlike class selectors, id selectors can only be used once and an element can only have one id selector specified.
+
+Note: ID over-rules a class when there is a conflict.
+
+#### Grouping Selectors
+
+If you have multiple selectors that have common attributes, you can group up those attributes and build out the selectors with unique attributes. For example:
+
+``` css
+.read,
+.unread {
+  color: white;
+  background-color: black;
+}
+
+.read {
+  font-size: 12px;
+}
+
+.unread {
+  font-size: 14px;
+}
+```
+
+This way, the only differences are the font size that was specified for each selector but each one has the same foreground and background colours.
+
+### Adding CSS to HTML
+
+#### External CSS (CSS File)
+
+``` html
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+```
+
+#### Internal CSS
+
+``` html
+<head>
+  <style>
+    div {
+      color: white;
+      background-color: black;
+    }
+
+    p {
+      color: red;
+    }
+  </style>
+</head>
+<body>...</body>
+```
+
+#### Inline CSS
+
+``` html
+<body>
+  <div style="color: white; background-color: black;">...</div>
+</body>
+```
