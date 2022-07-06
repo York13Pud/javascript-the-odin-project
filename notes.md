@@ -45,6 +45,8 @@ Started: 04/07/2022.
       - [External CSS (CSS File)](#external-css-css-file)
       - [Internal CSS](#internal-css)
       - [Inline CSS](#inline-css)
+    - [Box Model](#box-model)
+    - [Block vs Inline](#block-vs-inline)
 
 ## Introduction
 
@@ -486,3 +488,39 @@ This way, the only differences are the font size that was specified for each sel
   <div style="color: white; background-color: black;">...</div>
 </body>
 ```
+
+### Box Model
+
+Every element on a web page is a rectangular box. You can see this by setting the border on an element:
+
+``` css
+* {
+  border: 2px solid red;
+}
+```
+
+- Padding: Increases the space between the edge of a box and the content inside of it.
+- Margin: Increases the space between a box and any others that sit next to it.
+- Border: Adds space (even if it’s only a pixel or two) between the margin and the padding
+
+![padding, margin, border](assets/images/box-model.png)
+
+``` css
+.box-one {
+  padding: 20px;
+  border: 2px solid red;
+  margin: 20px;
+  height: 100px;
+  width: 100px
+}
+```
+
+In the above example, the element would be 100px x 100px but the total w or h would be 144px x 144px because the padding, border and margin will add to the size. This is called the standard box model.
+
+To reduce it down so that it sticks to the size of the element (100x100), add `box-sizing: border-box;` to the CSS selector. That way, it can only ever be 100px x 100px. This is often called the alternative box model.
+
+### Block vs Inline
+
+By default, web pages are blocked (stacked) atop of each other.
+
+A Div is a block element. A Span is an inline element, meaning it is used inside another element to do some styling change.
