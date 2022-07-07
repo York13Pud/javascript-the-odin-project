@@ -1,0 +1,56 @@
+* {
+    border: 1px solid red;
+    background-color: black;
+}
+
+html, body {
+    height:100%;
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+    height: 100%;
+    flex: 1 1 auto
+}
+
+.navbar {
+   width: 100%;
+   background-color: #1F2937;
+    
+}
+
+.heading {
+    width: 100%;
+    background-color: #1F2937;
+    color: white;
+}
+
+.header-text {
+    color: white;
+}
+
+.header-image {
+    color: white;
+}
+
+.info-area {
+    background-color: white;
+    width: 100%;
+}
+
+.quote-area {
+    background-color: white;
+    width: 100%;
+}
+
+.call-to-action {
+    background-color: white;
+    width: 100%;
+}
+
+.footer {
+    width: 100%;
+    background-color: #1F2937;
+    color: white;
+}

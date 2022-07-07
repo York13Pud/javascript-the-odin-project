@@ -47,6 +47,10 @@ Started: 04/07/2022.
       - [Inline CSS](#inline-css)
     - [Box Model](#box-model)
     - [Block vs Inline](#block-vs-inline)
+  - [FlexBox](#flexbox)
+    - [FlexBox Resizing](#flexbox-resizing)
+    - [FlexBox Axes](#flexbox-axes)
+    - [FlexBox Alignment](#flexbox-alignment)
 
 ## Introduction
 
@@ -511,7 +515,7 @@ Every element on a web page is a rectangular box. You can see this by setting th
   border: 2px solid red;
   margin: 20px;
   height: 100px;
-  width: 100px
+  width: 100px;
 }
 ```
 
@@ -524,3 +528,104 @@ To reduce it down so that it sticks to the size of the element (100x100), add `b
 By default, web pages are blocked (stacked) atop of each other.
 
 A Div is a block element. A Span is an inline element, meaning it is used inside another element to do some styling change.
+
+## FlexBox
+
+Flexbox is a relatively new way of manipulating elements in CSS.
+
+Flexbox is a way to arrange items into rows or columns. These items will flex (i.e. grow or shrink) based on some simple rules that you can define.
+
+For example, three divs on a page would normally be stacked below each other (block model). You can use flexbox to align them on one row inside a div:
+
+``` html
+<div class="flex-container">
+  <div class="one"></div>
+  <div class="two"></div>
+  <div class="three"></div>
+</div>
+```
+
+``` css
+.flex-container {
+  display: flex;
+}
+
+/* this selector selects all divs inside of .flex-container (called flex items) */
+.flex-container div {
+  background: peachpuff;
+  border: 4px solid brown;
+  height: 100px;
+  flex: 1;
+}
+```
+
+In addition, when you resize the page, they will resize as you go, if you use the flex: 1 CSS property.
+
+The flex declaration is actually a shorthand for 3 properties that you can set on a flex item. These properties affect how flex items size themselves within their container.
+
+### FlexBox Resizing
+
+- flex-grow: This CSS property tells the element how much to grow by. 1 is normal and 2 is twice as much. Mainly useful when you need to grow flex items in a container.
+- flex-shrink: Similar to grow but shrinking instead. Same format but you can use 0 to imply "don't shrink".
+- flex-basis: This sets the initial size of a flex item. Typically, you would use auto.
+
+### FlexBox Axes
+
+By default, the direction for a flex container is horizontal (row) but you can change it to vertical (column).
+
+``` html
+<div class="flex-container">
+  <div class="one"></div>
+  <div class="two"></div>
+  <div class="three"></div>
+</div>
+```
+
+``` css
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* this selector selects all divs inside of .flex-container */
+.flex-container div {
+  background: peachpuff;
+  border: 4px solid brown;
+  height: 80px;
+  flex: 1 1 auto;
+}
+```
+
+### FlexBox Alignment
+
+To space out elements in a container, add `justify-content: space-between;` to the container class and remove `flex: 1` from the class used by the items in the container. This way they will be evenly spaced out.
+
+Another alignment option is `gap`. This can be used to specify a specific gap between the elements in the container. For example:
+
+``` html
+<div class="container">
+  <div class="item"></div>
+  <div class="item"></div>
+  <div class="item"></div>
+</div>
+```
+
+``` css
+.container {
+  height: 140px;
+  padding: 16px;
+  background: plum;
+  border: 4px solid indigo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.item {
+  width: 60px;
+  height: 60px;
+  border: 4px solid darkslategray;
+  background: skyblue;
+}
+```
